@@ -3,7 +3,6 @@ import time
 import win32api
 import win32gui
 import win32con
-import os
 
 from ctypes import *
 
@@ -15,7 +14,8 @@ confirmX = 847
 confirmY = 645
 cancelX = 1118
 cancelY = 651
-
+reConnectX = 971
+reConnectY = 596
 VK_CODE = {
   'backspace':0x08,
   'tab':0x09,
@@ -182,45 +182,34 @@ def getCurPos():
 def start():
     moveCurPos(startX,startY)
     time.sleep(1)
-    clickLeftCur();
-
-
-def cancel():
+    clickLeftCur()
+    return 1
+def esc():
     key_input(VK_CODE['esc'])
-    time.sleep(10)
+    time.sleep(3)
+    return 1
+def returnBack():
     moveCurPos(returnBackX, returnBackY)
     clickLeftCur()
-    time.sleep(10)
+    time.sleep(3)
+    return 1
+def confirm():
     moveCurPos(confirmX, confirmY)
     clickLeftCur()
-    time.sleep(10)
+    time.sleep(3)
+    return 1
+def cancel():
     moveCurPos(cancelX, cancelY)
     clickLeftCur()
+    time.sleep(3)
+    return 1
+def reConnect():
+  moveCurPos(reConnectX, reConnectY)
+  clickLeftCur()
+  time.sleep(3)
+  return 1
 
 
-
-
-
-# moveToPos(0,0)
-# time.sleep(3)
-# print("begin")
-# key_input(VK_CODE['esc'])
-# getCurPos()
-# moveCurPos(260,990)
-# getCurPos()
-# #clickLeftCur()
-
-
-
-# i = 0
-# while i < 10:
-#     time.sleep(5);
-#     print("开始")
-#     start();
-#     time.sleep(20);
-#     print("退出")
-#     cancel();
-#     time.sleep(10);
 
 
 
