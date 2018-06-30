@@ -166,8 +166,7 @@ VK_CODE = {
 
 def moveCurPos(x,y):
     windll.user32.SetCursorPos(x, y)
-    windll.user32.SetCursorPos(x-100, y-100)
-    windll.user32.SetCursorPos(x, y)
+    time.sleep(1)
 def clickLeftCur():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
@@ -180,34 +179,40 @@ def getCurPos():
     print(local)
     return local
 def start():
-    moveCurPos(startX,startY)
+    print("press start  ...............")
+    moveCurPos(startX, startY)
     time.sleep(1)
     clickLeftCur()
     return 1
 def esc():
+    print("press esc  .................")
     key_input(VK_CODE['esc'])
     time.sleep(3)
     return 1
 def returnBack():
+    print("press return back  .........")
     moveCurPos(returnBackX, returnBackY)
     clickLeftCur()
     time.sleep(3)
     return 1
 def confirm():
+    print("press confirm ..............")
     moveCurPos(confirmX, confirmY)
     clickLeftCur()
-    time.sleep(3)
+    time.sleep(10)
     return 1
 def cancel():
+    print("press cancel ..............")
     moveCurPos(cancelX, cancelY)
     clickLeftCur()
     time.sleep(3)
     return 1
 def reConnect():
-  moveCurPos(reConnectX, reConnectY)
-  clickLeftCur()
-  time.sleep(3)
-  return 1
+    print("press reConnect ...........")
+    moveCurPos(reConnectX, reConnectY)
+    clickLeftCur()
+    time.sleep(3)
+    return 1
 
 
 
